@@ -1,47 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tic Tac Toe</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
-        <link href="style.css" rel="stylesheet"/> 
-    </head>
-    <body>
-        <div class="players-wrapper">
-            <div class="player-one">
-                <input type="text" id="player1" value="Player 1" /> 
-                <button>x</button> 
-            </div> 
-            <div class="player-two">
-                <input type="text" id="player2" value="Player 2" /> 
-                <button>o</button> 
-            </div> 
-        </div> 
-        <div class="table-wrapper">
-            <table>
-                <tbody>
-                    <tr>
-                        <td id="0" class="top-left"></td> 
-                        <td id="1" class="top-mid"></td> 
-                        <td id="2" class="top-right"></td> 
-                    </tr> 
-                    <tr>
-                        <td id="3" class="mid-left"></td> 
-                        <td id="4"></td> 
-                        <td id="5" class="mid-right"></td> 
-                    </tr> 
-                    <tr>
-                        <td id="6" class="bot-left"></td> 
-                        <td id="7" class="bot-mid"></td> 
-                        <td id="8" class="bot-right"></td> 
-                    </tr> 
-                </tbody> 
-            </table> 
-            <div class="result">PRESS START</div> 
-        </div> 
-        <button class="start">START</button> 
-        <script src="script.js"></script> 
-    </body>
-</html> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="switch">
+      <input type="checkbox" id="switch" />
+      <label for="switch">
+        <span></span>
+      </label>
+    </div>
+    <div class="players">
+      <input type="text" name="player-1" id="player-1" value="Player" />
+      <input type="text" name="player-2" id="player-2" value="AI" />
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td id="0" class="top-left"></td>
+          <td id="1" class="top-mid"></td>
+          <td id="2" class="top-right"></td>
+        </tr>
+        <tr>
+          <td id="3" class="mid-left"></td>
+          <td id="4"></td>
+          <td id="5" class="mid-right"></td>
+        </tr>
+        <tr>
+          <td id="6" class="bot-left"></td>
+          <td id="7" class="bot-mid"></td>
+          <td id="8" class="bot-right"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="start">Start</button>
+    <script src="script.js"></script>
+  </body>
+</html>

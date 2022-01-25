@@ -1,151 +1,230 @@
-
 :root {
-    --beige: #FAF1E6;
-    --white: #FDFAF6;
-    --light: #E4EFE7;
-    --green: #064420;
+  --beige: #faf1e6;
+  --white: #fdfaf6;
+  --light: #e4efe7;
+  --green: #064420;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
-    color: var(--green);
-    font-family: 'Source Code Pro', monospace;
+  padding: 1em;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--green);
+  font-family: "Source Code Pro", monospace;
 }
 
-input,button {
-    border: 2px solid var(--green);
-    background: var(--white);
-    padding: 0.5em;
-    font-size: 1rem;
-    color: inherit;
-    margin: 0.5em;
-    font-family: inherit;
+label {
+  cursor: pointer;
 }
 
-.current {
-    background: var(--beige);
+[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
 }
 
-.table-wrapper {
-    position: relative;
+.switch label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
 }
 
-
-.players-wrapper {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 5em;
+.switch span {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  background: var(--beige);
+  transition: all 0.3s;
+  color: var(--green);
 }
 
-.start {
-    margin-top: 5em;
-    cursor: pointer;
-    font-weight: 700;
+.switch span::before,
+.switch span::after {
+  content: "";
+  position: absolute;
+}
+
+.switch span::before {
+  left: 1px;
+  top: 1px;
+  width: 24px;
+  height: 24px;
+  background: var(--green);
+  content: "X";
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.switch span::after {
+  top: 50%;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  content: "O";
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch [type="checkbox"]:checked + label span {
+  background: var(--green);
+  color: var(--white);
+}
+
+.switch [type="checkbox"]:checked + label span::before {
+  transform: translateX(24px);
+  background: var(--white);
+  color: var(--green);
+}
+
+.switch [type="checkbox"]:checked + label span::after {
+  width: 14px;
+  height: 14px;
+  left: 8px;
+  content: "O";
+}
+
+.players {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 2rem;
+}
+
+.players input {
+  width: 40%;
+  font-size: 2rem;
+  background-color: var(--beige);
+  border: none;
+  color: inherit;
+}
+
+.players input:focus {
+  width: 100%;
 }
 
 table {
-    border-collapse: collapse;
+  margin-top: 2em;
+  border-collapse: collapse;
 }
 
 td {
-    border: 5px solid var(--green);
-    vertical-align: middle;
-    text-align: center;
-    font-size: 2rem;
-    height: 2em;
-    width: 2em;
-    cursor: pointer;
+  border: 5px solid var(--green);
+  vertical-align: middle;
+  text-align: center;
+  font-size: 2rem;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
 }
 
 .top-left {
-    border-top: none;
-    border-left: none;
+  border-top: none;
+  border-left: none;
 }
 
 .top-mid {
-    border-top: none;
+  border-top: none;
 }
 
 .top-right {
-    border-top: none;
-    border-right: none;
+  border-top: none;
+  border-right: none;
 }
 
 .mid-left {
-    border-left: none;
+  border-left: none;
 }
 
 .bot-left {
-    border-left: none;
-    border-bottom: none;
+  border-left: none;
+  border-bottom: none;
 }
 
 .bot-mid {
-    border-bottom: none;
+  border-bottom: none;
 }
 .bot-right {
-    border-right: none;
-    border-bottom: none;
+  border-right: none;
+  border-bottom: none;
 }
 
 .mid-right {
-    border-right: none;
+  border-right: none;
 }
 
 .x {
-    position: relative;
+  position: relative;
 }
 
-.x::before, .x::after {
-    top: 10%;
-    position: absolute;
-    content: "";
-    height: 80%;
-    width: 5px;
-    background-color: var(--green);
+.x::before,
+.x::after {
+  top: 10%;
+  position: absolute;
+  content: "";
+  height: 80%;
+  width: 5px;
+  background-color: var(--green);
 }
 
 .x::before {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .x::after {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .o {
-    position: relative
+  position: relative;
 }
 
 .o::after {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    content: "";
-    position: absolute;
-    border: 5px solid var(--green);
-    border-radius: 500%;
-    height: 70%;
-    width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  position: absolute;
+  border: 5px solid var(--green);
+  border-radius: 500%;
+  height: 70%;
+  width: 70%;
 }
 
-
-.result {
-    display: block;
-    word-wrap: break-word;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background: var(--light);
+button {
+  cursor: pointer;
+  margin-top: 1em;
+  font-size: 2rem;
+  border: 1px solid var(--green);
+  background: var(--beige);
+  color: var(--green);
+  padding: 0.2em 0.5em;
 }
