@@ -19,8 +19,8 @@
       </label>
     </div>
     <div class="players">
-      <input type="text" name="player-1" id="player-1" value="Player" />
-      <input type="text" name="player-2" id="player-2" value="AI" />
+      <input type="text" name="player-1" id="player-1" value="AI" />
+      <input type="text" name="player-2" id="player-2" value="Player" />
     </div>
     <table>
       <tbody>
@@ -42,6 +42,11 @@
       </tbody>
     </table>
     <button class="start">Start</button>
+    <div class="display-alert closed">
+      <span class="alert-text">player 1 win</span>
+      <button class="ok">ok</button>
+    </div>
+    <div class="overlay closed"></div>
     <script src="script.js"></script>
   </body>
 </html>
