@@ -45,7 +45,7 @@ label {
 
 .switch span {
   position: relative;
-  width: 50px;
+  width: 100px;
   height: 26px;
   border-radius: 15px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
@@ -98,7 +98,7 @@ label {
 }
 
 .switch [type="checkbox"]:checked + label span::before {
-  transform: translateX(24px);
+  transform: translateX(74px);
   background: var(--white);
   color: var(--green);
 }
@@ -147,6 +147,14 @@ td {
   height: 3em;
   width: 3em;
   cursor: pointer;
+}
+
+td:hover {
+  background: radial-gradient(
+    circle,
+    rgba(228, 239, 231, 1) 0%,
+    rgba(253, 250, 246, 1) 80%
+  );
 }
 
 .top-left {
@@ -233,10 +241,14 @@ button {
   padding: 0.2em 0.5em;
 }
 
+button:hover {
+  background-color: var(--light);
+}
+
 .display-alert {
   position: absolute;
   background: transparent;
-  background: var(--light);
+  background: var(--white);
   border: 2px solid var(--green);
   top: 2vh;
   left: 50%;
